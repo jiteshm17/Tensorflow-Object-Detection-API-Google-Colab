@@ -28,25 +28,25 @@ You can get the config file of the model by simply typing the name of the model 
 For the sake of simplicity, I am going to be using this config file as an example to explain things from now on for the sake of uniformity. Nevertheless, the same procedure can be followed with any other config file.
 
 Copy its contents to a file and name it with the file extension `.config`. We now need to change the following lines in the config file
-* Change the `num_classes` in line 10 to the number of classes present in your dataset.
+..* Change the `num_classes` in line 10 to the number of classes present in your dataset.
 
-* Change the `min_dimension` and `max_dimension` to the height and width of your images in lines 13 and 14.
+..* Change the `min_dimension` and `max_dimension` to the height and width of your images in lines 13 and 14.
 
-* I have changed the optimizer from `momentum_optimizer` to `adam` since it showed greater convergence speed. It is however not necessary to do so. You can learn more about changing the optimizer and other parameters by referring to this [link] if you wish.
+..* I have changed the optimizer from `momentum_optimizer` to `adam` since it showed greater convergence speed. It is however not necessary to do so. You can learn more about changing the optimizer and other parameters by referring to this [link][2] if you wish.
 
-* In line 107, you need to give the path from where the model should restore parameters during training. If you are training for the first time, then you can give the path of the mode.ckpt file which was downloaded using Google Colab. The path is something like '/content/faster_rcnn_inception_v2_coco_2018_01_28/model.ckpt'. If you already have trained for a certain number of steps(let's say 5023) and wish to restore training from there, you can replace the path with this `/content/drive/My Drive/folder_containing_checkpoints/model.ckpt-5023`. (The space between 'My' and 'Drive' in the path is intentionally kept and will not cause any error)
+..* In line 107, you need to give the path from where the model should restore parameters during training. If you are training for the first time, then you can give the path of the mode.ckpt file which was downloaded using Google Colab. The path is something like '/content/faster_rcnn_inception_v2_coco_2018_01_28/model.ckpt'. If you already have trained for a certain number of steps(let's say 5023) and wish to restore training from there, you can replace the path with this `/content/drive/My Drive/folder_containing_checkpoints/model.ckpt-5023`. (The space between 'My' and 'Drive' in the path is intentionally kept and will not cause any error)
 
-* You can choose whether to keep data augmentation or not in line 114. If you don't need it, you can just remove lines 114-117.
+..* You can choose whether to keep data augmentation or not in line 114. If you don't need it, you can just remove lines 114-117.
 
-* In line 122, you need to provide the path to your `train.record file`. It may look like `content/drive/My\ Drive/folder_name/train.record`. It's a good idea to upload this to your drive and read it from there as it may sometimes be quite large in size and it may take a long time to upload directly in google colab.
+..* In line 122, you need to provide the path to your `train.record file`. It may look like `content/drive/My\ Drive/folder_name/train.record`. It's a good idea to upload this to your drive and read it from there as it may sometimes be quite large in size and it may take a long time to upload directly in google colab.
 
-* Line 124 contains the path to your `label_map.pbtxt` file. You can upload this file to the `/content/` directory in Google Colab. The path would then be like `/content/label_map.pbtxt`
+..* Line 124 contains the path to your `label_map.pbtxt` file. You can upload this file to the `/content/` directory in Google Colab. The path would then be like `/content/label_map.pbtxt`
 
-* That is all we need to change in the config file. In case you are wondering why we are not changing anything in the lines after, it is because the eval config is not read by the `train.py` script as it is only going to train the model and not perform any evaluation. You can now save this file(asuume name is `frcnn_inception.config`) and upload this to the `/content/` directory in Google Colab
+..* That is all we need to change in the config file. In case you are wondering why we are not changing anything in the lines after, it is because the eval config is not read by the `train.py` script as it is only going to train the model and not perform any evaluation. You can now save this file(asuume name is `frcnn_inception.config`) and upload this to the `/content/` directory in Google Colab
 
 8. We are now ready to run the final cell of the notebook in Google Colab. Before you run this cell, change the `train_dir` to point to the folder where you want your checkpoints to be saved and the `pipeline_config_path` to point to the path of the `config file`. In my case, it was `/content/frcnn_inception.config`
 
-9. You can now run the cell and it everything should work properly. It may take some time for the training to actually start and sometimes may take longer than usual. One minor setback once training begins is that you need to keep clearning the ouptut of the cell every 30 minutes or so because the page crashes becasue of the amount of HTML content which is constantly being printed to the console. You may sometimes get an error saying that ` A Google Drive Timeout has recently occured` a few seconds after running the `train.py` cell. To overcome this, stop the cell from executing, close the tab in your browser and reopen it. All the files that you have uploaded will still be saved and the error should not repeat. If it does, try doing this once more. Inspite of this, if the error persists, you may need to clear out some space from your Google Drive. You can refer to this [link] here for more ways to fix this issue.
+9. You can now run the cell and it everything should work properly. It may take some time for the training to actually start and sometimes may take longer than usual. One minor setback once training begins is that you need to keep clearning the ouptut of the cell every 30 minutes or so because the page crashes becasue of the amount of HTML content which is constantly being printed to the console. You may sometimes get an error saying that ` A Google Drive Timeout has recently occured` a few seconds after running the `train.py` cell. To overcome this, stop the cell from executing, close the tab in your browser and reopen it. All the files that you have uploaded will still be saved and the error should not repeat. If it does, try doing this once more. Inspite of this, if the error persists, you may need to clear out some space from your Google Drive. You can refer to this [link][3] here for more ways to fix the issue.
 
 
 
