@@ -1,5 +1,5 @@
-# tensorflow_object_detection_colab
-Train a Tensorflow object detection model using Google Colab
+
+# Train a Tensorflow object detection model using Google Colab
 
 # Prerequisites
 1. A folder for storing training chekpoints(You should have reasonably sufficient Google Drive storage space to store at least a few training checkpoints (around 3-5 GB))
