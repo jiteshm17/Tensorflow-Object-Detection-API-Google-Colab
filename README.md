@@ -8,11 +8,11 @@
 
 # Steps involved
 
-* Run the TF_OD.ipynb notebook present in the repository on Google Colab with the hardware accelerator set to GPU. To do this, select `Runtime`, click on `Change Runtime type` and change the `hardware accelerator` to GPU.
+* Run the frcnn_inception.ipynb notebook present in the repository on Google Colab with the hardware accelerator set to GPU. To do this, select `Runtime`, click on `Change Runtime type` and change the `hardware accelerator` to GPU.
 
-* Open the following link to see the list of available pretrained models on various datasets like MSCOCO, Kitti, Open Images, etc. Right click on the model that you wish to use and copy the link address.
+* Open the following [link][5] to see the list of available pretrained models on various datasets like MSCOCO, Kitti, Open Images, etc. Right click on the model that you wish to use and copy the link address.
 
-* Paste this link in the first cell of the jupyter notebook to download the model to Google Colab. Anything which you download will be stored in the `/content/` directory of Google Colab.
+* Replace this link in the first cell of the jupyter notebook to download the model to Google Colab. Anything which you download will be stored in the `/content/` directory of Google Colab.
 
 * Run the second cell to unzip its contents. After unzipping, you can delete the `frozen_inference_graph.pb` file if you wish since you won't be needing it as you are going to train a model.
 
@@ -50,3 +50,4 @@ I hope this was helpful for you. In case you face any isssues, you can open as i
 [2]: https://towardsdatascience.com/3-steps-to-update-parameters-of-faster-r-cnn-ssd-models-in-tensorflow-object-detection-api-7eddb11273ed
 [3]: https://research.google.com/colaboratory/faq.html
 [4]: mailto:jiteshmalipeddi92@gmail.com
+[5]: https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md
