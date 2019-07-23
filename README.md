@@ -27,9 +27,9 @@ Note: Tensorflow keeps saving training checkpoints every 1000 steps or so. It is
 
     * Change the `min_dimension` and `max_dimension` to the height and width of your images in lines 13 and 14.
 
-    * I have changed the optimizer from `momentum_optimizer` to `adam` since it showed greater convergence speed. It is however not necessary to do so. You can learn more about changing the optimizer and other parameters by referring to this [link][2] if you wish.
+    * I have changed the optimizer from `momentum_optimizer` to `adam` since it showed greater convergence speed. It is however not necessary to do so. You can learn more about changing the optimizer and other parameters by following this [link][2]
 
-    * In line 107, you need to give the path from where the model should restore parameters during training. If you are training for the first time, then you can give the path of the mode.ckpt file which was downloaded using Google Colab. The path is something like '/content/faster_rcnn_inception_v2_coco_2018_01_28/model.ckpt'. If you already have trained for a certain number of steps(let's say 5023) and wish to restore training from there, you can replace the path with this `/content/drive/My Drive/folder_containing_checkpoints/model.ckpt-5023`. (The space between 'My' and 'Drive' in the path is intentionally kept and will not cause any error)
+    * In line 107, you need to give the path from where the model should restore parameters during training. If you are training for the first time, then you can give the path of the mode.ckpt file which was downloaded using Google Colab. The path is something like `/content/faster_rcnn_inception_v2_coco_2018_01_28/model.ckpt`. If you already have trained for a certain number of steps(let's say 5023) and wish to restore training from there, you can replace the path with this `/content/drive/My Drive/folder_containing_checkpoints/model.ckpt-5023`. (The space between 'My' and 'Drive' in the path is intentionally kept and will not cause any error)
 
     * You can choose whether to keep data augmentation or not in line 114. If you don't need it, you can just remove lines 114-117.
 
@@ -43,7 +43,10 @@ Note: Tensorflow keeps saving training checkpoints every 1000 steps or so. It is
 
 * You can now run the cell and it everything should work properly. It may take some time for the training to actually start and sometimes may take longer than usual. One minor setback once training begins is that you need to keep clearning the ouptut of the cell every 30 minutes or so because the page crashes becasue of the amount of HTML content which is constantly being printed to the console. You may sometimes get an error saying that ` A Google Drive Timeout has recently occured` a few seconds after running the `train.py` cell. To overcome this, stop the cell from executing, close the tab in your browser and reopen it. All the files that you have uploaded will still be saved and the error should not repeat. If it does, try doing this once more. Inspite of this, if the error persists, you may need to clear out some space from your Google Drive. You can refer to this [link][3] here for more ways to fix the issue.
 
+I hope this was helpful for you. In case you face any isssues, you can open as issue or reach me at my [email][4]
+
 
 [1]: https://github.com/tensorflow/models/blob/master/research/object_detection/samples/configs/faster_rcnn_inception_v2_coco.config
 [2]: https://towardsdatascience.com/3-steps-to-update-parameters-of-faster-r-cnn-ssd-models-in-tensorflow-object-detection-api-7eddb11273ed
-[3]:  https://research.google.com/colaboratory/faq.html
+[3]: https://research.google.com/colaboratory/faq.html
+[4]: mailto:jiteshmalipeddi92@gmail.com
